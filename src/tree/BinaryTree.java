@@ -8,6 +8,7 @@ package tree;
 public class BinaryTree {
     private  TreeNode root ;
 
+
     public boolean add(int data){
 
         TreeNode parent = root;
@@ -42,6 +43,60 @@ public class BinaryTree {
             }
         }
         return null;
+    }
+
+
+    /**
+     * 前序遍历 根左右
+     * @param treeNode
+     */
+    private void preOrder(TreeNode treeNode){
+        if ( treeNode != null){
+            System.out.print(treeNode.data + "\t");
+            preOrder(treeNode.left);
+            preOrder(treeNode.right);
+        }
+    }
+
+    public void preOrder(){
+        preOrder(root);
+    }
+
+    /**
+     * 中序遍历 左根右
+     * @param treeNode
+     */
+    private void inOrder(TreeNode treeNode){
+        if ( treeNode != null){
+            inOrder(treeNode.left);
+            System.out.print(treeNode.data + "\t");
+            inOrder(treeNode.right);
+        }
+    }
+
+    public void inOrder(){
+        inOrder(root);
+    }
+
+
+    /**
+     * 后序遍历 左右根
+     * @param treeNode
+     */
+    private void postOrder(TreeNode treeNode){
+        if ( treeNode != null){
+            postOrder(treeNode.left);
+            postOrder(treeNode.right);
+            System.out.print(treeNode.data + "\t");
+        }
+    }
+
+    public void postOrder(){
+        postOrder(root);
+    }
+
+    private TreeNode getRoot(){
+        return this.root;
     }
 
     /**
@@ -109,6 +164,34 @@ public class BinaryTree {
         }
     }
 
+
+    /**
+     * 计算当前二叉树的左子树的高度
+     * @return
+     */
+    public int getLeftTreeHeight(){
+        if (root == null) return 0;
+        if (root.left == null ) return 0;
+        return root.left.getHeight();
+    }
+    /**
+     * 计算当前二叉树的右子树的高度
+     * @return
+     */
+    public int getRightTreeHeight(){
+        if (root == null) return 0;
+        if (root.right == null ) return 0;
+        return root.right.getHeight();
+    }
+
+    /**
+     * 计算二叉树的高度
+     * @return
+     */
+    public int getHeight(){
+        return root == null ? 0 : root.getHeight();
+    }
+
     protected class TreeNode{
         protected int data;
         protected TreeNode left;
@@ -130,6 +213,31 @@ public class BinaryTree {
         public TreeNode(int data,TreeNode right){
             this.data = data;
             this.right = right;
+        }
+
+        /**
+         *  计算当前节点的高度
+         * @return
+         */
+        public int getHeight(){
+            return Math.max(this.left == null?0:this.left.getHeight(),this.right == null?0:this.right.getHeight())+1;
+        }
+
+        /**
+         * 计算当前节点的左子树的高度
+         * @return
+         */
+        public int getLeftHeight(){
+            if (left == null) return 0;
+            return left.getHeight();
+        }
+        /**
+         * 计算当前节点的右子树的高度
+         * @return
+         */
+        public int getRightHeight(){
+            if (right == null) return 0;
+            return right.getHeight();
         }
     }
 
