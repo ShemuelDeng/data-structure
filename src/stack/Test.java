@@ -11,5 +11,9 @@ public class Test {
         arrayStack.push(2);
         System.out.println(arrayStack.pop());
         System.out.println(arrayStack.pop());
+        arrayStack.push(1);
+        arrayStack.push(2);
+        System.out.println(arrayStack.pop());
+        System.out.println(arrayStack.empty());
     }
 }

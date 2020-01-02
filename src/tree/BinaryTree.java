@@ -105,7 +105,7 @@ public class BinaryTree {
      * @date: 2019/12/31 13:51
      * @author: dengshaoxiang
      */
-    public void deleteNode(int data){
+    public boolean deleteNode(int data){
 
         //记录当前节点
         TreeNode current = root;
@@ -123,29 +123,30 @@ public class BinaryTree {
                 break; // 退出循环
             }
         }
-        if (current == null){
-            return;
+        if (current == null){  // 如果要要删除的元素不存在, 则current == null
+            return false;
         }
         // 程序走到这,current 为要删除的节点
         // currentParent 为删除节点的父节点
 
         // 如果current有两个叶子节点,将 current右子树的最小值(二叉树的左节点是最小的)替换current,同时删除该最小值节点
         if (current.left != null && current.right !=null){
-            TreeNode r_tree= current.right; //
-            TreeNode r_tree_p=current;
-            while (r_tree.left != null){ // 循环找到最小
-                r_tree_p = r_tree;
-                r_tree = r_tree.left;  // 右子树的左节点是最小的
+            TreeNode rTree= current.right; //
+            TreeNode rTreePar=current;
+            while (rTree.left != null){ // 循环找到最小
+                rTreePar = rTree;
+                rTree = rTree.left;  // 右子树的左节点是最小的
             }
             // 程序走到这,r_tree是最小的节点,将r_tree的值替换当前要删除节点的值
-            current.data = r_tree.data;
+            current.data = rTree.data;
             //r_tree是最小的节点赋值给当前要删的节点
-            current = r_tree;
+            current = rTree;
             //当前要删的节点的父节 = 最小节点的父节点
-            currentParent = r_tree_p;
+            currentParent = rTreePar;
         }
 
-        // 判断current是否只有一个叶子节点
+        // 程序走到这,current为要删除的节点
+        // 定一个子节点,记录当前要删除的节点的子几点
         TreeNode child = null;
 
         if (current.right !=null){
@@ -162,6 +163,7 @@ public class BinaryTree {
         }else {
             currentParent.right = child;
         }
+        return true;
     }
 
 

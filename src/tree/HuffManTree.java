@@ -14,7 +14,7 @@ import java.util.List;
 public class HuffManTree {
 
 
-    private static int[] array = {1,2,4,3,6,5,9,7,18,11,13,20};
+    private static int[] array = {1,2,3,4,5,6};
 
 
 

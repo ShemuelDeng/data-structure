@@ -1,5 +1,7 @@
 package tree;
 
+import java.math.BigInteger;
+
 /**
  * Created by dengshaoxiang on 2019/12/31 11:20
  * description:
@@ -16,10 +18,7 @@ public class TestTree {
         binaryTree.add(15);
         binaryTree.add(14);
         binaryTree.add(16);
+        binaryTree.deleteNode(1);
         binaryTree.inOrder();
-        System.out.println();
-        System.out.println(binaryTree.getLeftTreeHeight());
-        System.out.println(binaryTree.getRightTreeHeight());
-        System.out.println(binaryTree.getHeight());
     }
 }
