@@ -8,7 +8,7 @@
 
   > *注意：*左旋转之后能保证平衡的前提是，比较高的那颗子树的左右子树要满足右子树比左子树高，否则就涉及*到第三种情况*
 
-![nobalance](/nobalance.png)
+![balanced](https://imgchr.com/i/ldJs4P)
 
   **左旋转步骤：**
 
@@ -21,7 +21,7 @@
 
   **旋转后：**
 
-  ![balanced](/balanced.png)
+ ![nobalance](https://imgchr.com/i/ldJc38)
 
   **情况二：**当左子树的高度-右子树的高度>1时，就需要进行**右旋转**,步骤与左旋转相反。
 
@@ -29,7 +29,7 @@
 
   **情况三：**当左右子树的高度差大于1时，且整棵树的左右子树高度之比>1,较高的子树的左右之比<1， 则需要**双旋转**，如下图
 
-![doubleRotate](G:\IDEAWorkSpace\data-structure\src\images\doubleRotate.png)
+![doubleRotate](https://imgchr.com/i/ldJ69f)
 
   **双旋转步骤：**
 
