@@ -11,6 +11,8 @@ data-structure implements by java language
 
 - [单向链表](https://github.com/ShemuelDeng/data-structure/blob/master/src/link/SingleLink.java)
 - [双向链表](https://github.com/ShemuelDeng/data-structure/blob/master/src/link/DoubleLink.java)
+- 单向循环链表
+- 双向循环链表
 
 ##### 栈
 
@@ -26,7 +28,27 @@ data-structure implements by java language
 
 - [查找二叉树](https://github.com/ShemuelDeng/data-structure/blob/master/src/tree/BinaryTree.java)
 - [哈夫曼树](https://github.com/ShemuelDeng/data-structure/blob/master/src/tree/HuffManTree.java)
-- AVL树
+- [AVL树](https://github.com/ShemuelDeng/data-structure/blob/master/src/tree/avltree.md)
+
+##### 图
+
+- 无向图
+
+  图的存储方式；
+
+  1. 邻接矩阵
+
+     ![Adjacencymatrix](https://github.com/ShemuelDeng/data-structure/blob/master/src/images/Adjacencymatrix.png)
+
+  2. 邻接链表
+
+     ![AdjacencyLink](https://github.com/ShemuelDeng/data-structure/blob/master/src/images/AdjacencyLink.png)
+
+  **二者的区别**：总共n个顶点，邻接矩阵会为每个顶点分配n个空间，用来存储和剩下的顶点的关系，会存在大量空间浪费，邻接链表不会存在浪费
+
+- 有向图
+
+- 带权图
 
 ##### 查找算法
 
