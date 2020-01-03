@@ -7,6 +7,8 @@ data-structure implements by java language
 
 - [单向链表](https://github.com/ShemuelDeng/data-structure/blob/master/src/link/SingleLink.java)
 - [双向链表](https://github.com/ShemuelDeng/data-structure/blob/master/src/link/DoubleLink.java)
+- 单向循环链表
+- 双向循环链表
 
 ##### 栈
 
@@ -22,6 +24,7 @@ data-structure implements by java language
 
 - [查找二叉树](https://github.com/ShemuelDeng/data-structure/blob/master/src/tree/BinaryTree.java)
 - [哈夫曼树](https://github.com/ShemuelDeng/data-structure/blob/master/src/tree/HuffManTree.java)
+- AVL树
 
 ##### 查找算法
 
@@ -38,6 +41,17 @@ data-structure implements by java language
   插值查找是二分查找的改进版,改进了mid的位置,使得被查找的元素离mid更近,从而
 
   减少了查找次数
+
+##### 排序算法
+
+- [冒泡排序](https://github.com/ShemuelDeng/data-structure/blob/master/src/sort/BubbleSort.java)
+- [选择排序](https://github.com/ShemuelDeng/data-structure/blob/master/src/sort/SelectionSort.java)
+- [插入排序](https://github.com/ShemuelDeng/data-structure/blob/master/src/sort/InsertSort.java)
+- [希尔排序](https://github.com/ShemuelDeng/data-structure/blob/master/src/sort/ShellSort.java)
+- 堆排序
+- 快速排序
+- 归并排序
+- 基数排序
 
 ##### 常见算法题
 

@@ -3,10 +3,10 @@ package tree;
 
 /**
  * Created by dengshaoxiang on 2019/12/30 11:19
- * description: 二叉树
+ * description: 二叉树不带泛型的
  */
 public class BinaryTree {
-    private  TreeNode root ;
+    private TreeNode root ;
 
 
     public boolean add(int data){
@@ -43,60 +43,6 @@ public class BinaryTree {
             }
         }
         return null;
-    }
-
-
-    /**
-     * 前序遍历 根左右
-     * @param treeNode
-     */
-    private void preOrder(TreeNode treeNode){
-        if ( treeNode != null){
-            System.out.print(treeNode.data + "\t");
-            preOrder(treeNode.left);
-            preOrder(treeNode.right);
-        }
-    }
-
-    public void preOrder(){
-        preOrder(root);
-    }
-
-    /**
-     * 中序遍历 左根右
-     * @param treeNode
-     */
-    private void inOrder(TreeNode treeNode){
-        if ( treeNode != null){
-            inOrder(treeNode.left);
-            System.out.print(treeNode.data + "\t");
-            inOrder(treeNode.right);
-        }
-    }
-
-    public void inOrder(){
-        inOrder(root);
-    }
-
-
-    /**
-     * 后序遍历 左右根
-     * @param treeNode
-     */
-    private void postOrder(TreeNode treeNode){
-        if ( treeNode != null){
-            postOrder(treeNode.left);
-            postOrder(treeNode.right);
-            System.out.print(treeNode.data + "\t");
-        }
-    }
-
-    public void postOrder(){
-        postOrder(root);
-    }
-
-    private TreeNode getRoot(){
-        return this.root;
     }
 
     /**
@@ -166,6 +112,57 @@ public class BinaryTree {
         return true;
     }
 
+    /**
+     * 前序遍历 根左右
+     * @param treeNode
+     */
+    private void preOrder(TreeNode treeNode){
+        if ( treeNode != null){
+            System.out.print(treeNode.data + "\t");
+            preOrder(treeNode.left);
+            preOrder(treeNode.right);
+        }
+    }
+
+    public void preOrder(){
+        preOrder(root);
+    }
+
+    /**
+     * 中序遍历 左根右
+     * @param treeNode
+     */
+    private void inOrder(TreeNode treeNode){
+        if ( treeNode != null){
+            inOrder(treeNode.left);
+            System.out.print(treeNode.data + "\t");
+            inOrder(treeNode.right);
+        }
+    }
+
+    public void inOrder(){
+        inOrder(root);
+    }
+
+    /**
+     * 后序遍历 左右根
+     * @param treeNode
+     */
+    private void postOrder(TreeNode treeNode){
+        if ( treeNode != null){
+            postOrder(treeNode.left);
+            postOrder(treeNode.right);
+            System.out.print(treeNode.data + "\t");
+        }
+    }
+
+    public void postOrder(){
+        postOrder(root);
+    }
+
+    private TreeNode getRoot(){
+        return this.root;
+    }
 
     /**
      * 计算当前二叉树的左子树的高度
@@ -194,7 +191,7 @@ public class BinaryTree {
         return root == null ? 0 : root.getHeight();
     }
 
-    protected class TreeNode{
+    private class TreeNode{
         protected int data;
         protected TreeNode left;
         protected TreeNode right;
