@@ -1,5 +1,7 @@
 # AVL树（平衡二叉树）
 
+#### [代码实现](https://github.com/ShemuelDeng/data-structure/blob/master/src/tree/AVLTree.java)
+
   > AVL树是一种高度平衡的平衡二叉树，树中的任意节点的左右子树的高度之差不超过1。
 
   	当构建一颗排序二叉树时，如果插入一个节点后，二叉树的左右子树的差大于1，则需要手动维护使之达到平衡。
@@ -8,7 +10,7 @@
 
   > *注意：*左旋转之后能保证平衡的前提是，比较高的那颗子树的左右子树要满足右子树比左子树高，否则就涉及*到第三种情况*
 
-![balanced](https://imgchr.com/i/ldJs4P)
+![nobalance](https://github.com/ShemuelDeng/data-structure/blob/master/src/images/nobalance.png)
 
   **左旋转步骤：**
 
@@ -21,7 +23,7 @@
 
   **旋转后：**
 
- ![nobalance](https://imgchr.com/i/ldJc38)
+  ![balanced](<https://github.com/ShemuelDeng/data-structure/blob/master/src/images/balanced.png>)
 
   **情况二：**当左子树的高度-右子树的高度>1时，就需要进行**右旋转**,步骤与左旋转相反。
 
@@ -29,7 +31,7 @@
 
   **情况三：**当左右子树的高度差大于1时，且整棵树的左右子树高度之比>1,较高的子树的左右之比<1， 则需要**双旋转**，如下图
 
-![doubleRotate](https://imgchr.com/i/ldJ69f)
+![doubleRotate](https://github.com/ShemuelDeng/data-structure/blob/master/src/images/doubleRotate.png)
 
   **双旋转步骤：**
 
