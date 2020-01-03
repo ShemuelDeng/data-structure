@@ -8,17 +8,17 @@ import java.math.BigInteger;
  */
 public class TestTree {
     public static void main(String[] args) {
-        BinaryTree binaryTree = new BinaryTree();
+        AVLTree binaryTree = new AVLTree();
+        binaryTree.add(10);
+        binaryTree.add(11);
+        binaryTree.add(7);
         binaryTree.add(6);
-        binaryTree.add(3);
-        binaryTree.add(1);
-        binaryTree.add(5);
-        binaryTree.add(9);
         binaryTree.add(8);
-        binaryTree.add(15);
-        binaryTree.add(14);
-        binaryTree.add(16);
-        binaryTree.deleteNode(1);
+        binaryTree.add(9);
+        binaryTree.inOrder();
+        System.out.println();
+        System.out.println(binaryTree.getLeftTreeHeight());
+        System.out.println(binaryTree.getRightTreeHeight());
         binaryTree.inOrder();
     }
 }

@@ -1,3 +1,7 @@
+---
+typora-root-url: src\images
+---
+
 # data-structure数据结构
 data-structure implements by java language
 
@@ -22,6 +26,7 @@ data-structure implements by java language
 
 - [查找二叉树](https://github.com/ShemuelDeng/data-structure/blob/master/src/tree/BinaryTree.java)
 - [哈夫曼树](https://github.com/ShemuelDeng/data-structure/blob/master/src/tree/HuffManTree.java)
+- AVL树
 
 ##### 查找算法
 
