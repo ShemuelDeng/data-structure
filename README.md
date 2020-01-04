@@ -69,3 +69,13 @@ data-structure implements by java language
 ##### 常见算法题
 
 - [八皇后问题](https://github.com/ShemuelDeng/data-structure/blob/master/src/%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%E9%A2%98/EightQueen.java)
+
+- 字符串匹配算法
+
+- 贪心算法
+
+- 迷宫问题
+
+- 约瑟夫问题
+
+  
