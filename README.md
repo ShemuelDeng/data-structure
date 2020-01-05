@@ -32,6 +32,8 @@ data-structure implements by java language
 
 ##### 图
 
+###### 图的种类
+
 - 无向图
 
   图的存储方式；
@@ -44,11 +46,25 @@ data-structure implements by java language
 
      ![AdjacencyLink](https://github.com/ShemuelDeng/data-structure/blob/master/src/images/AdjacencyLink.png)
 
+  3. 十字链表法
+
   **二者的区别**：总共n个顶点，邻接矩阵会为每个顶点分配n个空间，用来存储和剩下的顶点的关系，会存在大量空间浪费，邻接链表不会存在浪费
 
 - 有向图
 
 - 带权图
+
+###### 图的遍历方式
+
+1. 深度优先遍历
+
+   使用栈实现
+
+2. 广度优先遍历
+
+   使用队列实现
+
+##### 动态规划
 
 ##### 查找算法
 
