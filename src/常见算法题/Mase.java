@@ -54,7 +54,7 @@ public class Mase {
                     return true;
                 }else if (AgoOn(map,i+1,j+1)){ // go right
                     return true;
-                }else if (AgoOn(map,i,j+1)){ //AgoOn(map,i,j+1)
+                }else if (AgoOn(map,i,j+1)){ //AgoOn(graph,i,j+1)
                     return true;
                 }else{
                     map[i][j] = temp;

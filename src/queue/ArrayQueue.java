@@ -75,7 +75,7 @@ public class ArrayQueue<E> {
             }
         }
     }
-    private boolean isEmpty(){
+    public boolean isEmpty(){
         return front == rear;
     }
 

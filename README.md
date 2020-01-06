@@ -1,3 +1,7 @@
+---
+typora-root-url: src\images
+---
+
 # data-structure数据结构
 data-structure implements by java language
 
@@ -24,7 +28,43 @@ data-structure implements by java language
 
 - [查找二叉树](https://github.com/ShemuelDeng/data-structure/blob/master/src/tree/BinaryTree.java)
 - [哈夫曼树](https://github.com/ShemuelDeng/data-structure/blob/master/src/tree/HuffManTree.java)
-- AVL树
+- [AVL树](https://github.com/ShemuelDeng/data-structure/blob/master/src/tree/avltree.md)
+
+##### 图
+
+###### 图的种类
+
+- 无向图
+
+  图的存储方式；
+
+  1. 邻接矩阵
+
+     ![Adjacencymatrix](https://github.com/ShemuelDeng/data-structure/blob/master/src/images/Adjacencymatrix.png)
+
+  2. 邻接链表
+
+     ![AdjacencyLink](https://github.com/ShemuelDeng/data-structure/blob/master/src/images/AdjacencyLink.png)
+
+  3. 十字链表法
+
+  **二者的区别**：总共n个顶点，邻接矩阵会为每个顶点分配n个空间，用来存储和剩下的顶点的关系，会存在大量空间浪费，邻接链表不会存在浪费
+
+- 有向图
+
+- 带权图
+
+###### 图的遍历方式
+
+1. 深度优先遍历
+
+   使用栈实现
+
+2. 广度优先遍历
+
+   使用队列实现
+
+##### 动态规划
 
 ##### 查找算法
 
@@ -42,17 +82,16 @@ data-structure implements by java language
 
   减少了查找次数
 
-##### 排序算法
-
-- [冒泡排序](https://github.com/ShemuelDeng/data-structure/blob/master/src/sort/BubbleSort.java)
-- [选择排序](https://github.com/ShemuelDeng/data-structure/blob/master/src/sort/SelectionSort.java)
-- [插入排序](https://github.com/ShemuelDeng/data-structure/blob/master/src/sort/InsertSort.java)
-- [希尔排序](https://github.com/ShemuelDeng/data-structure/blob/master/src/sort/ShellSort.java)
-- 堆排序
-- 快速排序
-- 归并排序
-- 基数排序
-
 ##### 常见算法题
 
 - [八皇后问题](https://github.com/ShemuelDeng/data-structure/blob/master/src/%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%E9%A2%98/EightQueen.java)
+
+- 字符串匹配算法
+
+- 贪心算法
+
+- 迷宫问题
+
+- 约瑟夫问题
+
+  

@@ -1,23 +1,31 @@
 package tree;
 
+
 /**
- * Created by dengshaoxiang on 2020/1/2 11:12
- * description: 平衡二叉树
+ * Created by dengshaoxiang on 2019/12/30 11:19
+ * description: 二叉树
  */
-public class AVLTree{
-    private TreeNode root ;
+public class AVLTree {
+    private  TreeNode root ;
+
+
     public boolean add(int data){
+
         TreeNode parent = root;
         while (parent != null){
             if (data<parent.data){
                 if (parent.left == null){
                     parent.left = new TreeNode(data);
+                    leftRotateIfNeccessary();
+                    rightRotateIfNeccessary();
                     return true;
                 }
                 parent = parent.left; // 指针左移
             }else{
                 if (parent.right == null){
                     parent.right = new TreeNode(data);
+                    leftRotateIfNeccessary();
+                    rightRotateIfNeccessary();
                     return true;
                 }
                 parent = parent.right; // 指针右移
@@ -39,6 +47,81 @@ public class AVLTree{
             }
         }
         return null;
+    }
+
+    // 检测是否需要左旋转
+    private void leftRotateIfNeccessary(){
+        if (getRightTreeHeight()-getLeftTreeHeight()>1){
+            if (root.right != null && root.right.getLeftHeight()>root.left.getRightHeight()){
+                root.left.rightRotate();
+            }
+            root.leftRotate();
+        }
+    }
+
+    // 检测是否需要右旋转
+    private void rightRotateIfNeccessary(){
+        // 左子树高度-右子树高度>1
+        if (getLeftTreeHeight()-getRightTreeHeight()>1){
+            // 左子树的右子树高度>左子树的左子树高度
+            if (root.left != null && root.left.getRightHeight()>root.left.getLeftHeight()){
+                root.left.leftRotate();
+            }
+            root.rightRotate();
+        }
+    }
+
+    /**
+     * 前序遍历 根左右
+     * @param treeNode
+     */
+    private void preOrder(TreeNode treeNode){
+        if ( treeNode != null){
+            System.out.print(treeNode.data + "\t");
+            preOrder(treeNode.left);
+            preOrder(treeNode.right);
+        }
+    }
+
+    public void preOrder(){
+        preOrder(root);
+    }
+
+    /**
+     * 中序遍历 左根右
+     * @param treeNode
+     */
+    private void inOrder(TreeNode treeNode){
+        if ( treeNode != null){
+            inOrder(treeNode.left);
+            System.out.print(treeNode.data + "\t");
+            inOrder(treeNode.right);
+        }
+    }
+
+    public void inOrder(){
+        inOrder(root);
+    }
+
+
+    /**
+     * 后序遍历 左右根
+     * @param treeNode
+     */
+    private void postOrder(TreeNode treeNode){
+        if ( treeNode != null){
+            postOrder(treeNode.left);
+            postOrder(treeNode.right);
+            System.out.print(treeNode.data + "\t");
+        }
+    }
+
+    public void postOrder(){
+        postOrder(root);
+    }
+
+    private TreeNode getRoot(){
+        return this.root;
     }
 
     /**
@@ -108,57 +191,6 @@ public class AVLTree{
         return true;
     }
 
-    /**
-     * 前序遍历 根左右
-     * @param treeNode
-     */
-    private void preOrder(TreeNode treeNode){
-        if ( treeNode != null){
-            System.out.print(treeNode.data + "\t");
-            preOrder(treeNode.left);
-            preOrder(treeNode.right);
-        }
-    }
-
-    public void preOrder(){
-        preOrder(root);
-    }
-
-    /**
-     * 中序遍历 左根右
-     * @param treeNode
-     */
-    private void inOrder(TreeNode treeNode){
-        if ( treeNode != null){
-            inOrder(treeNode.left);
-            System.out.print(treeNode.data + "\t");
-            inOrder(treeNode.right);
-        }
-    }
-
-    public void inOrder(){
-        inOrder(root);
-    }
-
-    /**
-     * 后序遍历 左右根
-     * @param treeNode
-     */
-    private void postOrder(TreeNode treeNode){
-        if ( treeNode != null){
-            postOrder(treeNode.left);
-            postOrder(treeNode.right);
-            System.out.print(treeNode.data + "\t");
-        }
-    }
-
-    public void postOrder(){
-        postOrder(root);
-    }
-
-    private TreeNode getRoot(){
-        return this.root;
-    }
 
     /**
      * 计算当前二叉树的左子树的高度
@@ -187,7 +219,6 @@ public class AVLTree{
         return root == null ? 0 : root.getHeight();
     }
 
-    
     protected class TreeNode{
         protected int data;
         protected TreeNode left;
@@ -197,16 +228,16 @@ public class AVLTree{
         public TreeNode(int data){
             this.data = data;
         }
-        public TreeNode(TreeNode left, int data, TreeNode right){
+        public TreeNode(TreeNode left,int data,TreeNode right){
             this.data = data;
             this.right = right;
             this.left = left;
         }
-        public TreeNode(TreeNode left, int data){
+        public TreeNode(TreeNode left,int data){
             this.data = data;
             this.left = left;
         }
-        public TreeNode(int data, TreeNode right){
+        public TreeNode(int data,TreeNode right){
             this.data = data;
             this.right = right;
         }
@@ -237,12 +268,40 @@ public class AVLTree{
         }
 
         /**
-         * @description:
-         * @param 
-         * @date: 2020/1/3 16:53
-         * @author: dengshaoxiang
+         * 左旋转
          */
-        private void leftRotate(){}
+        private void leftRotate(){
+            //1.以当前根节点为节点创建一个新的节点
+            TreeNode newNode = new TreeNode(data);
+            //2.新的节点的左子树设置为当前根节点的左子树
+            newNode.left = left;
+            //3.新的节点的右子树设置为当前根节点的右子树的左子树
+            newNode.right = right.left;
+            //4.把当前节点值设置为当前节点的右子树的值
+            data = right.data;
+            //5.把当前节点的右子树设置为，右子树的右子树，root.right = root.right.right
+            right = right.right;
+            //6.把当前节点的左子树设置为新的节点
+            left = newNode;
+        }
+
+        /**
+         * 右旋转
+         */
+        private void rightRotate(){
+            //1.以当前根节点为节点创建一个新的节点
+            TreeNode newNode = new TreeNode(data);
+            //2.新的节点的右子树设置为当前根节点的右子树
+            newNode.right = right;
+            //3.新的节点的左子树设置为当前根节点的左子树的右子树
+            newNode.left = left.right;
+            //4.把当前节点值设置为当前节点的左子树的值
+            data = left.data;
+            //5.把当前节点的左子树设置为，左子树的左子树，root.left = root.left.left
+            left = left.left;
+            //6.把当前节点的右子树设置为新的节点
+            right = newNode;
+        }
     }
 
 }
