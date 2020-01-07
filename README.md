@@ -9,6 +9,7 @@ data-structure implements by java language
 - [双向链表](https://github.com/ShemuelDeng/data-structure/blob/master/src/link/DoubleLink.java)
 - [单向循环链表](https://github.com/ShemuelDeng/data-structure/blob/master/src/link/SingleCircleLink.java)
 - [双向循环链表](https://github.com/ShemuelDeng/data-structure/blob/master/src/link/DoubleCircleLink.java)
+- 快慢指针的应用
 
 ##### 栈
 
