@@ -148,6 +148,17 @@ data-structure implements by java language
 
   减少了查找次数
 
+##### 排序算法
+
+- [冒泡排序](https://github.com/ShemuelDeng/data-structure/blob/master/src/sort/BubbleSort.java)
+- [选择排序](https://github.com/ShemuelDeng/data-structure/blob/master/src/sort/SelectionSort.java)
+- [插入排序](https://github.com/ShemuelDeng/data-structure/blob/master/src/sort/InsertSort.java)
+- [希尔排序](https://github.com/ShemuelDeng/data-structure/blob/master/src/sort/ShellSort.java)
+- 堆排序
+- 快速排序
+- 归并排序
+- 基数排序
+
 ##### 常见算法题
 
 - [八皇后问题](https://github.com/ShemuelDeng/data-structure/blob/master/src/%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%E9%A2%98/EightQueen.java)
