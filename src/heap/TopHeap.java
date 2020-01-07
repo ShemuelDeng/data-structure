@@ -56,7 +56,7 @@ public class TopHeap {
     }
 
     private void checkBounds(){
-        if (this.size >= this.maxSize) throw new RuntimeException("堆已满");
+        if (this.size-1 >= this.maxSize) throw new RuntimeException("堆已满");
     }
 
     public int size(){
@@ -68,9 +68,6 @@ public class TopHeap {
         for (int e : array) {
             System.out.print(e+"\t");
         }
-    }
-    public static void main(String[] args) {
-        System.out.println(3/2);
     }
 
 }

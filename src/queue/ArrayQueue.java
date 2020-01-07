@@ -68,7 +68,7 @@ public class ArrayQueue<E> {
                  System.arraycopy(queue,front,queue,0,rear-front);
                 // System.arraycopy can be replaced with the for loop
                 //for(int i = front;i<rear; i++){
-                  //  queue[i-front] = queue[i]; // move all element to the front of the array
+                //  queue[i-front] = queue[i]; // move all element to the front of the array
                 //}
                 this.rear=rear-front;
                 this.front=0;

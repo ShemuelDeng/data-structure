@@ -1,14 +1,12 @@
 package heap;
 
-import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
-
 /**
  * 大顶堆
  * 大顶堆要排序，所以存储的元素必须要能比较
  */
 public class BigTopHeap<E extends Comparable<E>> {
 
-    private E[] array; // 数组，用来存储数据
+    private Object[] array; // 数组，用来存储数据
 
     private int maxSize; // 大顶堆的大小，
 
@@ -17,46 +15,47 @@ public class BigTopHeap<E extends Comparable<E>> {
     // 构造函数
     public BigTopHeap(int maxSize){
         this.maxSize = maxSize;
-        array = (E[]) new Object[maxSize+1];
+        array = new Object[maxSize];
     }
 
     public boolean add(E element){
         checkBounds();
-        array[++size] = element; // 添加元素
-        heaplize();// 堆化
+        int index = size;
+        if (size == 0){
+            array[0] = element;
+        }else{
+            bigUp(index,element);
+        }
+        size++;
         return true;
     }
 
     /**
-     * 堆化，
+     * @description: 大元素上移动
+     * @param index
+     * @param element
+     * @date: 2020/1/7 14:37
+     * @author: dengshaoxiang
      */
-    private void heaplize(){
-        // 数组中最后一个元素的父节点的索引
-        int sonIndex = size-1; // 最后一个节点的索引
-        int parentIndex = sonIndex / 2;
-        while( parentIndex != 0 ){
-            // 父节点小于子节点 则交换
-            if (array[parentIndex].compareTo(array[sonIndex])<0){
-                swap(parentIndex,sonIndex);
-                sonIndex = parentIndex;
-                parentIndex = sonIndex/2;
+    private void bigUp(int index,E element){
+        while (index > 0){
+            int parentIndex = (index-1) >>> 1;
+            Comparable<? super E> parent = (Comparable<? super E>)array[parentIndex];
+            if (parent.compareTo(element) < 0){
+                array[index] = parent;
+                index = parentIndex;
+            }else{
+                break;
             }
         }
-    }
-
-    /**
-     * 数组交换元素
-     * @param index1
-     * @param index2
-     */
-    private void swap(int index1,int index2){
-        E temp = array[index1];
-        array[index1] = array[index2];
-        array[index2] = temp;
+        // 程序走到这,index 要么是父节点索引,要么是最后一个节点的索引
+        // 如果是父节点的索引,则说明父节点比较小,需要将新加的大的元素放入父节点
+        // 如果是随后一个元素的索引 说明是直接break到这里的 ,最后一个元素较小,直接插入
+        array[index] = element;
     }
 
     private void checkBounds(){
-        if (this.size >= this.maxSize) throw new RuntimeException("堆已满");
+        if (this.size-1 >= this.maxSize) throw new RuntimeException("堆已满");
     }
 
     public int size(){
@@ -65,12 +64,9 @@ public class BigTopHeap<E extends Comparable<E>> {
 
 
     public void showHeap(){
-        for (E e : array) {
-            System.out.print(e+"\t");
+        for (Object e : array) {
+            if (e != null) System.out.print(e+"\t");
         }
-    }
-    public static void main(String[] args) {
-        System.out.println(3/2);
     }
 
 }

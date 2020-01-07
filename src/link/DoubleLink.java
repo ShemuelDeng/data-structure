@@ -229,7 +229,7 @@ public class DoubleLink<E> implements List<E> {
     //  inner class
     private class Node<E>{
         public E data; // data
-        public Node pre; //  next node
+        public Node pre; //  pre node
         public Node next; //  next node
         public Node(){
         }

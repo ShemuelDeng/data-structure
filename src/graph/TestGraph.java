@@ -1,10 +1,14 @@
 package graph;
 
-import queue.ArrayQueue;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @description: 测试图
+ * @date: 2020/1/7 15:49
+ * @author: dengshaoxiang
+ */
 public class TestGraph {
     public static void main(String[] args) {
         List<User> users = new ArrayList<>();

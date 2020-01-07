@@ -3,7 +3,7 @@ package tree;
 
 /**
  * Created by dengshaoxiang on 2019/12/30 11:19
- * description: 二叉树
+ * description: 平衡二叉树,插入节点后自动平衡
  */
 public class AVLTree {
     private  TreeNode root ;

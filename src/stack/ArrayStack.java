@@ -8,9 +8,9 @@ import java.util.EmptyStackException;
  */
 public class ArrayStack<E> {
 
-    private int max = 10;
-    private Object[] stack ;
-    private int top = -1;
+    private int max = 10; // default max capacity of the stack
+    private Object[] stack ; // to store the element
+    private int top = -1; // the top point of the stack
 
     public E pop(){
         if (top != -1){

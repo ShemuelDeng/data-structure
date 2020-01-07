@@ -8,6 +8,7 @@ public class SeqSearch {
 
     private static int[] array = {12,3,421,3,-1,34,22};
 
+    // 就是平常用的暴力循环 ,即为线性模式
     public static int seqSearch(int key){
         for (int i = 0; i < array.length; i++) {
             if (array[i] == key){
